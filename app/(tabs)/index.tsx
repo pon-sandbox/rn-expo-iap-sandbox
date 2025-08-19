@@ -5,6 +5,7 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import SimpleStore from '@/components/SimpleStore';
 
 export default function HomeScreen() {
   return (
@@ -20,6 +21,12 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
+      {Platform.OS === 'ios' && (
+        <ThemedView style={styles.stepContainer}>
+          <ThemedText type="subtitle">In-App Purchase Store</ThemedText>
+          <SimpleStore />
+        </ThemedView>
+      )}
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
